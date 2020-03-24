@@ -14,7 +14,7 @@
 3. Modeling data
 
 **Cleaning & Exploring The Data:**
- The first thing we did was lok at the data while keeping in mind the following questions:
+ The first thing we did was look at the data while keeping in mind the following questions:
  
  1. What information do we have?
  2. What information are we missing?
