@@ -22,7 +22,7 @@
  
 From viewing the data we found that we had 22 columns which consisted of information on homes that played a roll in its price; size of the home, the year it was built, the year it was renovated, number of batherooms and bedrooms, etc. 
 
-The missing values were represented with a *?* as well as *NaN* values, this was the issue we decieded to deal with first. After the missing values were taken care of we graphed a heatmap to view the correlation between each column vs the price column, with this we would be able to determine which columns were important and which columns were not. From the graph we decided on the following columns:
+The missing values were represented with a *?* as well as a *NaN*, this was the issue we decieded to deal with first. After the missing values were taken care of we graphed a heatmap to view the correlation between each column vs the price column, with this we would be able to determine which columns were important and which columns were not. From the graph we decided on the following columns:
 
 - price
 - bedrooms
