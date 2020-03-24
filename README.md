@@ -44,7 +44,6 @@ The missing values were represented with a *?* or a *NaN*, this was the issue we
  
  The following notebook shows the cleaning & exploring of the data  **(insert notebook link here)**
  
- Before we move one there is one more thing that needed to be cleaned up, the repeated values.
  
  # Modeling The Data 
 
