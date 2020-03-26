@@ -13,7 +13,7 @@ Once those questions are answered you will see that the more research you do the
 
 **The Solution:** 
 
- Here at DS Borg Homes our team has spent the last decade developed a new product that will 
+ Here at DS Borg Homes our team has spent the last decade developing 
 
  
  
