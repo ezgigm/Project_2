@@ -2,7 +2,19 @@
 
 **The Goal:**
  The goal of this project is to predict the the sale price of homes based off of the zipcode of the homes.
+ 
+ **The Problem:**
+ 
+ During our daily commute we tend drive past homes that are either appealing to the eye or just need a little work to fix it up. After that moment of admiration or of making plans on how you would fix up a home, you drive on and forget about it. 
+ 
+ But what if you didn't forget about it, what if you actually followed through with your idea and bought a brand new home, or even a fixer upper? Where would you even begin to bring such a thought to life? Most importantly how much would it be to make it happen? 
 
+Once those questions are answered you will see that the more research you do the more the prices vary depending on the area you decide to purchase in. Not to mention the other factors that play a role in a homes price i.e. water front view and a basement.
+
+**The Solution:** 
+
+ 
+ 
 **The Data:**
  The data used to acheive our goal is from the King County House Sales dataset (This dataset was based off of homes bought in 2015 & 2017) **(insert link to csv file for dataset here)**. Within this file you will find information on homes that contributes to how much they cost, i.e. if the home was renovated. 
 
