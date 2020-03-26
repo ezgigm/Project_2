@@ -1,21 +1,21 @@
 # The Sale Price Of Houses
 
 **The Goal:**
- The goal of this project is to predict the the sale price of homes based off of the zipcode of the homes.
+ The goal of this project is to predict the the sale price of homes based off of the zipcode the home is located in.
  
  **The Problem:**
  
- During our daily commute we tend to drive past homes that are either appealing to the eye or just need a little bit of work. After that moment of admiration or of making plans on how you would fix up a home, you drive on and forget about it. 
+ During our daily commute we tend to drive past homes that are either appealing to the eye or homes that just need a bit of work. After that moment of admiration or of making plans on how you would fix up a home, you drive on and forget about it. 
  
- But what if you didn't forget about it, what if you actually followed through with your idea and bought a brand new home, or even a fixer upper? Where would you even begin to bring such a thought to life? Most importantly how much would it be to make it happen? 
+ But what if you didn't forget about it, what if you actually followed through with your idea and bought a brand new home, or even a fixer upper? Where would you even begin to bring such a thought to life? Most importantly, how much would it be to make it happen? 
 
 Once those questions are answered you will see that the more research you do the more the prices vary depending on the area you decide to purchase in. Not to mention the other factors that play a role in a homes price i.e. water front view and a basement. So now the price you had set for a budget begins to increase due to the lack of knowledge when looking into the value of the home you want to purchase.
 
 **The Solution:** 
 
- Here at DS Borg Homes our team has spent the last decade developing 
+ Here at DS Borg Homes our team has spent the last year developing a model that will be able to tell how much a home actually is worth by just simply typing in the zipcode! Voilà!! No more long nights of scouring through papers, websites, or phone numbers trying to find the answers you need. With our model, DS Borg Homes will help you find the perfect price for the perfect home.   
 
- 
+## The Procces of Developing the Model  
  
 **The Data:**
  The data used to acheive our goal is from the King County House Sales dataset (This dataset was based off of homes bought in 2015 & 2017) **(insert link to csv file for dataset here)**. Within this file you will find information on homes that contributes to how much they cost, i.e. if the home was renovated. 
