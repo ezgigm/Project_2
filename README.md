@@ -1,3 +1,14 @@
+README explains findings succinctly
+README discusses the metrics used, with some explanation of why those metrics were used to evaluate models
+README explains the final model and how it compares to an initial baseline
+README outlines some recommendations and lists out future improvements and potential weaknesses in data/models
+Both the original data and the version used for analysis are available in the repository
+
+
+
+
+
+
 # The Sale Price Of Houses
 
 **The Goal:**
