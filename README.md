@@ -5,7 +5,7 @@
  
  **The Problem:**
  
- During our daily commute we tend drive past homes that are either appealing to the eye or just need a little bit of work. After that moment of admiration or of making plans on how you would fix up a home, you drive on and forget about it. 
+ During our daily commute we tend to drive past homes that are either appealing to the eye or just need a little bit of work. After that moment of admiration or of making plans on how you would fix up a home, you drive on and forget about it. 
  
  But what if you didn't forget about it, what if you actually followed through with your idea and bought a brand new home, or even a fixer upper? Where would you even begin to bring such a thought to life? Most importantly how much would it be to make it happen? 
 
