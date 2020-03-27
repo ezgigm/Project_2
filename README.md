@@ -44,7 +44,7 @@ Once those questions are answered you will see that the more research you do the
  
 1. Cleaning the data
 2. Exploring the data
-3. Modeling data
+3. Modeling the data
 
 ## Cleaning & Exploring The Data:
 
