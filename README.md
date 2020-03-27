@@ -63,7 +63,7 @@ https://blog.minitab.com/blog/adventures-in-statistics-2/regression-analysis-how
 
 **Baseline**
 
-The baseline model we chose to start with was a Linear Regression Model, this is used in statistics to compare the dependat variable to the independant variables. This model was just to see how the cleaned data would peform before making any changes. Our *price* column was the dependent veriable that was affected by and change in the other columns which were the dependent variables (assuming there are no columns correlated with one another aka interacting).
+The baseline model we chose to start with was a Linear Regression Model, this is used in statistics to compare the dependant variable to the independant variables. This model was just to see how the cleaned data would peform before making any changes. Our *price* column was the dependent veriable that was affected by and change in the other columns which were the dependent variables (assuming there are no columns correlated with one another aka interacting).
 
 You to make sure there is a leveled playing field for your model, so to make sure the range of numerical values in our data would affect our model we chose a scaler, a Robust Scaler. This would help numerical spread of the numbers which helps with outliers. If you know anything about outliers, then you know how the model will take them in and give results that are off. From there we ran the model and got a score of .70, remeber the goal is to get our R-squared score as close to 1 as possible. 
 
@@ -109,7 +109,7 @@ With this model we adjusted the alpha as followed: 0.001, 0.1, 1000. The first t
 
 https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Ridge.html?highlight=ridge#sklearn.linear_model.Ridge
 
-Comparing the models to basaline: Below is a table that reflects the results of each model we ran up until this point.
+Comparing the models to baseline: Below is a table that reflects the results of each model we ran up until this point.
 
 ![]()
 
