@@ -18,9 +18,11 @@ Here at DS Borg Homes our team has spent the last year developing a model that w
 **The Data:** 
   The data used to achieve our goal is from the King County House Sales dataset.
 
+
 *The following link is the csv file of the original dataset we used:*
 
 https://github.com/ezgigm/Project_2/blob/master/Data/kc_house_data.csv
+
 
 **The Plan:**
   The way we plan on tackling this is by doing the following:
@@ -28,6 +30,7 @@ https://github.com/ezgigm/Project_2/blob/master/Data/kc_house_data.csv
 1. Cleaning the data
 2. Exploring the data
 3. Modeling the data
+
 
 # Cleaning & Exploring The Data:
 
@@ -41,13 +44,16 @@ From viewing the data we found that we had 22 columns which consisted of informa
 
 We also found that the missing values were represented with a ? or a NaN, this was the issue we decided to deal with first. After the missing values were taken care of we continued viewing the data for anything that would interfere with the modeling process. This included changing outliers and dropping columns. Afterwards the clean data was saved to a csv file, to work with.
 
+
 *The following csv file is where the cleaned data of the needed columns are found:*
 
 https://github.com/ezgigm/Project_2/blob/master/Data/clean_data.csv
 
+
 *The following notebook shows the cleaning & exploring of the data as well as our findings from doing so:*
 
 https://github.com/ezgigm/Project_2/blob/master/Jupyter%20Notebooks/STEP_1_Cleaning%20and%20Exploring%20Data.ipynb
+
 
 # Modeling The Data
 
@@ -55,9 +61,11 @@ When working with predictive Linear Regression Models you must first choose how 
 
 This R-squared score is used in statistics as a measurement of how close you can get your data to fit on a regression line. In other words, the closer you can get your data to fit on that line the better your model is doing at predicting the sale price of a home. The highest score you can get is a 1, in percentages that is 100% of accuracy. We chose this scoring metric because we knew that several models would be tested and the R-squared score would be compatible with those test models. The next step was to run our first model, our Baseline Model.
 
+
 *You can find more information on the R-squared score using the link below:*
 
 https://blog.minitab.com/blog/adventures-in-statistics-2/regression-analysis-how-do-i-interpret-r-squared-and-assess-the-goodness-of-fit
+
 
 # Baseline Model vs Final Model
 
@@ -66,6 +74,7 @@ https://blog.minitab.com/blog/adventures-in-statistics-2/regression-analysis-how
 The baseline model we chose to start with was a Linear Regression Model, this is used in statistics to compare the dependent variable to the independent variables. This model was just to see how the cleaned data would perform before making any changes. Our *price* column was the dependent variable that was affected by and change in the other columns which were the dependent variables (assuming there are no columns correlated with one another aka interacting).
 
 You to make sure there is a leveled playing field for your model, so to make sure the range of numerical values in our data would affect our model we chose a scaler, a Robust Scaler. This would help numerical spread of the numbers which helps with outliers. If you know anything about outliers, then you know how the model will take them in and give results that are off. From there we ran the model and got a score of .70, remember the goal is to get our R-squared score as close to 1 as possible. 
+
 
 *The following link will provide more information on Linear Regression:*
 
@@ -78,12 +87,15 @@ Even though our scaler was brought in to avoid any issues with the spread of the
 
 To take care of this we cleaned up the outliers for the most correlated columns. We then binned and encoded the columns we assumed were important (this assumption was based off of the heat map analysis). This methods we tried were known as feature engineering; target encoder and one-hot encoder.
 
+
 *The following link provides more information on Feature Engineering:*
 
 https://towardsdatascience.com/feature-engineering-for-machine-learning-3a5e293a5114
 
+
 **Transforming The Data**
 The focus for transforming the data was to get a normal distributing of the data, this way the regression model can perform better. The data transformer we chose was Quantile Transform, which helps us reach the goal of normal distribution by reducing the effects of our outliers in the data by focusing on quantiles. Why did we use this, simply put it will take care the columns that are interacting with one another. This effort was short lived because once we ran our baseline model on the transformed data, we got an R-squared score of .60. So it was time to try a new model. 
+
 
 *The following link provides the documentation for Quantile Transform:*
 
@@ -93,37 +105,47 @@ https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.Quantile
 **The Search of a New Model** 
 Maybe we made things more complicated then it need to be by adding the features that we did, so we gave two models a try, Ridge and Lasso regression. Both Lasso and Ridge are simple regressions used as simplified models which assist in the prevention of over-fitting your data aka doing way too much engineering. 
 
+
 *Lasso*
 
 When working with this model we adjusted the alpha as followed: 0.001, 0.1, 1000. All three alphas gave us an R-squared score of .70. We were back at the beginning. This model uses your data to drop the unimportant columns and then runs its prediction. 
+
 
 *You can find more information on Lasso using the following link:* 
 
 https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Lasso.html?highlight=lasso#sklearn.linear_model.Lasso
 
+
 *Ridge*
 
 With this model we adjusted the alpha as followed: 0.001, 0.1, 1000. The first two alphas gave us an R-squared score of .70, and the last one gave us a score of .68. Our progress was in limbo! With this model at every alpha level we tried, the coefficient of the data was changed in order to improve the model, but this caused us to do worse because we lost too much data. In simple terms the multicollinearity of our columns cause use to lose more data we indented to get rid of.
+
 
 *You can find more information on Ridge using the following link:*
 
 https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Ridge.html?highlight=ridge#sklearn.linear_model.Ridge
 
+
 Comparing the models to baseline: Below is a table that reflects the results of each model we ran up until this point.
+
 
 ![](https://raw.githubusercontent.com/ezgigm/Project_2/Ezgi/Screen%20Shot%202020-03-27%20at%2010.58.36%20AM.png)
 
+
 **Final Model**
+
 
 *GAM*
 
 GAM is also known as Generalized Additive Model, this model is used in statistics for its ability to interpret and regulate your data. In simple terms it is flexible enough to handle the multicollinearity our data has. To improve the performance of GAM we used tensored both the latitude and longitude columns, added gamma distribution in combination with log link. The R-squared score increased drastically from .70 to .90.
 
+
 *The following link will provide more information on GAM:* 
 
 https://pygam.readthedocs.io/en/latest/
 
-All modeling steps can be found in notebook below;
+
+*The following notebook shows the modeling process of the data as well as our findings from doing so:*
 
 https://github.com/ezgigm/Project_2/blob/master/Jupyter%20Notebooks/STEP_2_Modeling.ipynb
 
@@ -134,9 +156,11 @@ The R-squared score we received using the GAM Model vs our Baseline Model: Linea
 
 Our goal was to find a model that would be able to predict the price of a home based off of the area the home was located in. We took modeling a step further to accomplish this by selecting zip codes for our GAM Model to test. 
 
+
 The chart below shows the results of our test per zip code:
 
 ![](https://raw.githubusercontent.com/ezgigm/Project_2/Ezgi/Screen%20Shot%202020-03-27%20at%209.18.26%20AM.png)
+
 
 As you can see the model did an amazing job predicting the price of a home! Based on the areas listed in the chart above, if you were relocating and needed to buy a home but wanted more bang for your buck you could use this model to find a price that fits in your budget. 
 
@@ -154,32 +178,47 @@ We as well would like to build a model for every zip code in addition to subsets
 When it comes to the data in the future, we will collect more recent data past the year 2015 that includes data after the COVID-19 spread and recovery phase is over. 
 
 
-# Repository Guide
+# Reprository Guide
 
-*CSV Files*
+## CSV Files
+ 
+ Original csv file of dataset
 
-Original csv file of dataset
 https://github.com/ezgigm/Project_2/blob/master/Data/kc_house_data.csv
+
+Column names & their description
+
+https://github.com/ezgigm/Project_2/blob/master/Data/ColumnNames.md
 
 
 Cleaned csv file of data set
+
 https://github.com/ezgigm/Project_2/blob/master/Data/clean_data.csv
 
 
-*Notebooks*
-
-Cleaning & exploring the data and creating csv file 
+## Notebooks
+ 
+ **Cleaning & exploring the data and creating csv file** 
+ 
+ 
 https://github.com/ezgigm/Project_2/blob/master/Jupyter%20Notebooks/STEP_1_Cleaning%20and%20Exploring%20Data.ipynb
  
  
-Modeling the data
-https://github.com/ezgigm/Project_2/blob/master/Jupyter%20Notebooks/STEP_2_Modeling.ipynb
+ **Modeling the data**
+ 
+ https://github.com/ezgigm/Project_2/blob/master/Jupyter%20Notebooks/STEP_2_Modeling.ipynb
  
  
-*Presentation*
+ ## Photos for READ.me
+ 
+ https://github.com/ezgigm/Project_2/tree/master/README_ScreenShots
+ 
+
+## Presentation
 
 https://github.com/ezgigm/Project_2/blob/master/DS%20Borge%20Homes.pdf
 
+ 
 
 # Additional Resources
 
