@@ -1,7 +1,7 @@
 # The Sale Price Of Houses
 
 **The Goal:**
- The goal of this project is to predict the the sale price of homes based off of the zip code the home is located in.
+ The goal of this project is to predict the sale price of homes based off of the zip code the home is located in.
 
 **The Problem:**
 
@@ -63,9 +63,9 @@ https://blog.minitab.com/blog/adventures-in-statistics-2/regression-analysis-how
 
 **Baseline**
 
-The baseline model we chose to start with was a Linear Regression Model, this is used in statistics to compare the dependant variable to the independant variables. This model was just to see how the cleaned data would peform before making any changes. Our *price* column was the dependent veriable that was affected by and change in the other columns which were the dependent variables (assuming there are no columns correlated with one another aka interacting).
+The baseline model we chose to start with was a Linear Regression Model, this is used in statistics to compare the dependent variable to the independent variables. This model was just to see how the cleaned data would perform before making any changes. Our *price* column was the dependent variable that was affected by and change in the other columns which were the dependent variables (assuming there are no columns correlated with one another aka interacting).
 
-You to make sure there is a leveled playing field for your model, so to make sure the range of numerical values in our data would affect our model we chose a scaler, a Robust Scaler. This would help numerical spread of the numbers which helps with outliers. If you know anything about outliers, then you know how the model will take them in and give results that are off. From there we ran the model and got a score of .70, remeber the goal is to get our R-squared score as close to 1 as possible. 
+You to make sure there is a leveled playing field for your model, so to make sure the range of numerical values in our data would affect our model we chose a scaler, a Robust Scaler. This would help numerical spread of the numbers which helps with outliers. If you know anything about outliers, then you know how the model will take them in and give results that are off. From there we ran the model and got a score of .70, remember the goal is to get our R-squared score as close to 1 as possible. 
 
 *The following link will provide more information on Linear Regression:
 
@@ -74,16 +74,16 @@ https://en.wikipedia.org/wiki/Linear_regression
 
 **Improving The Model**
 
-Even though our scaler was brought in to avoid any issues with the spread of the data the model was stil being affected. So a heat map was plotted to see which columns were interacting with one another. From the heat map we saw that although the columns were independent from the *price* they were dependent on one another, in other words correlated.
+Even though our scaler was brought in to avoid any issues with the spread of the data the model was still being affected. So a heat map was plotted to see which columns were interacting with one another. From the heat map we saw that although the columns were independent from the *price* they were dependent on one another, in other words correlated.
 
-To take care of this we cleaned up the outliers for the most correlated columns. We then binned and endcoded the columns we assumed were important (this assumption was based off of the heat map analysis). This methods we tried were known as feature engineering; target encoder and one-hot encoder.
+To take care of this we cleaned up the outliers for the most correlated columns. We then binned and encoded the columns we assumed were important (this assumption was based off of the heat map analysis). This methods we tried were known as feature engineering; target encoder and one-hot encoder.
 
-*The following link provieds more information on Feature Engineering:
+*The following link provides more information on Feature Engineering:
 
 https://towardsdatascience.com/feature-engineering-for-machine-learning-3a5e293a5114
 
 **Transforming The Data**
-The focus for transforming the data was to get a normal distributing of the data, this way the regression model can peform better. The data transfomer we chose was Quantile Transform, which helps us reach the goal of normal distribution by reducing the effects of our outliers in the data by focusing on quantiles. Why did we use this, simply put it will take care the columns tha are interacting with one another. This effort was short lived because once we ran our baseline model on the transformed data, we got an R-squared score of .60. So it was time to try a new model. 
+The focus for transforming the data was to get a normal distributing of the data, this way the regression model can perform better. The data transformer we chose was Quantile Transform, which helps us reach the goal of normal distribution by reducing the effects of our outliers in the data by focusing on quantiles. Why did we use this, simply put it will take care the columns that are interacting with one another. This effort was short lived because once we ran our baseline model on the transformed data, we got an R-squared score of .60. So it was time to try a new model. 
 
 *The following link provides the documentation for Quantile Transform:*
 
@@ -91,7 +91,7 @@ https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.Quantile
 
 
 **The Search of a New Model** 
-Maybe we made things more complicated then it need to be by adding the features that we did, so we gave two models a try, Ridge and Lasso regression. Both Lasso and Ridge are simple regressions used as simplified models which assist in the prevetion of over-fitting your data aka doing way too much engineering. 
+Maybe we made things more complicated then it need to be by adding the features that we did, so we gave two models a try, Ridge and Lasso regression. Both Lasso and Ridge are simple regressions used as simplified models which assist in the prevention of over-fitting your data aka doing way too much engineering. 
 
 *Lasso*
 
@@ -103,7 +103,7 @@ https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Lasso.htm
 
 *Ridge*
 
-With this model we adjusted the alpha as followed: 0.001, 0.1, 1000. The first two alphas gave us an R-squared score of .70, and the last one gaves us a score of .68. Our progress was in limbo! With this model at every alpha level we tried, the coefficient of the data was changed in order to improve the model, but this caused us to do worse becasue we lost too much data. In simple terms the multicolinarity of our columns cause use to lose more data we indented to get rid of.
+With this model we adjusted the alpha as followed: 0.001, 0.1, 1000. The first two alphas gave us an R-squared score of .70, and the last one gave us a score of .68. Our progress was in limbo! With this model at every alpha level we tried, the coefficient of the data was changed in order to improve the model, but this caused us to do worse because we lost too much data. In simple terms the multicollinearity of our columns cause use to lose more data we indented to get rid of.
 
 *You can find more information on Ridge using the following link:*
 
@@ -111,15 +111,13 @@ https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Ridge.htm
 
 Comparing the models to baseline: Below is a table that reflects the results of each model we ran up until this point.
 
-![]()
+![](https://raw.githubusercontent.com/ezgigm/Project_2/Ezgi/Screen%20Shot%202020-03-27%20at%2010.58.36%20AM.png)
 
 **Final Model**
 
 *GAM*
 
-GAM is also known as Generalized Additive Model, this model is used in statistics for its ability to intepret and regulate your data. In simple terms it is flexible enough to handle the multicolinarity our data has. To improve the performance of GAM we used tensored both the latitude and longitude columns, added gamma distribution in combination with log link. The R-squared score increased drastically from .70 to .90. Below is the final results of the GAM Model.   
-
-![]()
+GAM is also known as Generalized Additive Model, this model is used in statistics for its ability to interpret and regulate your data. In simple terms it is flexible enough to handle the multicollinearity our data has. To improve the performance of GAM we used tensored both the latitude and longitude columns, added gamma distribution in combination with log link. The R-squared score increased drastically from .70 to .90.
 
 *The following link will provide more information on GAM:* 
 
@@ -129,13 +127,13 @@ https://pygam.readthedocs.io/en/latest/
 
 # Findings
 
-The R-squared score we recieved using the GAM Model vs our Baseline Model: Linear Regression Model was better due to the fact that GAM was able to handle our independent variables correlating with one another.   
+The R-squared score we received using the GAM Model vs our Baseline Model: Linear Regression Model was better due to the fact that GAM was able to handle our independent variables correlating with one another.   
 
 Our goal was to find a model that would be able to predict the price of a home based off of the area the home was located in. We took modeling a step further to accomplish this by selecting zip codes for our GAM Model to test. 
 
 The chart below shows the results of our test per zip code:
 
-![]()
+![](https://raw.githubusercontent.com/ezgigm/Project_2/Ezgi/Screen%20Shot%202020-03-27%20at%209.18.26%20AM.png)
 
 As you can see the model did an amazing job predicting the price of a home! Based on the areas listed in the chart above, if you were relocating and needed to buy a home but wanted more bang for your buck you could use this model to find a price that fits in your budget. 
 
@@ -144,17 +142,53 @@ If you are already in that area and looking to buy a fixer upper you could use t
 The possibilities are endless!!!
 
 
-# Recommendations and Future Improvements
+# Future Improvements
+
+In the future our team plans to perfect the baseline model by reproaching feature engineering using different methods from what we used in our first round of model testing. 
+
+We as well would like to build a model for every zip code in addition to subsets of zip codes i.e. dividing larger areas into smaller areas. To further analyze pricing of homes we will look into things such as having an ocean view vs having a man-made lake view.  
+
+When it comes to the data in the future, we will collect more recent data past the year 2015 that includes data after the COVID-19 spread and recovery phase is over. 
 
 
 # Reprository Guide
 
+*CSV Files*
+ Original csv file of dataset
+
+
+
+Cleaned csv file of data set
+
+
+
+*Notebooks*
+ Cleaning & exploring the data and creating csv file 
+ 
+ 
+ 
+ Modeling the data
+ 
+ 
+ 
+ *Presentation*
+
+
+
 # Additional Resources
+
+Access to original dataset
+
+https://info.kingcounty.gov/assessor/DataDownload/default.aspx
+
 
 # Team Members
 
+**Takehiro Yasuoka:** https://github.com/Tyasuoka
 
+**Ezgi Gumusbas:** https://github.com/ezgigm
 
+**Boi Moriba:** https://github.com/bmor2552
 
 
 
