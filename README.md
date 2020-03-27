@@ -18,7 +18,7 @@ Here at DS Borg Homes our team has spent the last year developing a model that w
 **The Data:** 
   The data used to achieve our goal is from the King County House Sales dataset.
 
-The following link is the csv file of the original dataset we used:
+*The following link is the csv file of the original dataset we used:
 
 **(insert csv file link here)**
 
@@ -45,7 +45,7 @@ The following csv file is where the cleaned data of the needed columns are found
 
 **(insert csv file link here)**
 
-The following notebook shows the cleaning & exploring of the data as well as our findings from doing so:
+*The following notebook shows the cleaning & exploring of the data as well as our findings from doing so:
 
 https://github.com/ezgigm/Project_2/blob/Ezgi/.ipynb_checkpoints/STEP_1_Cleaning%20and%20Exploring%20Data-checkpoint.ipynb
 
@@ -55,7 +55,7 @@ When working with predictive Linear Regression Models you must first choose how 
 
 This R-squared score is used in statistics as a measurement of how close you can get your data to fit on a regression line. In other words, the closer you can get your data to fit on that line the better your model is doing at predicting the sale price of a home. The highest score you can get is a 1, in percentages that is 100% of accuracy. We chose this scoring metric because we knew that several models would be tested and the R-squared score would be compatible with those test models. The next step was to run our first model, our Baseline Model.
 
-You can find more information on the R-squared score using the link below:
+*You can find more information on the R-squared score using the link below:
 
 https://blog.minitab.com/blog/adventures-in-statistics-2/regression-analysis-how-do-i-interpret-r-squared-and-assess-the-goodness-of-fit
 
@@ -67,35 +67,95 @@ The baseline model we chose to start with was a Linear Regression Model, this is
 
 You to make sure there is a leveled playing field for your model, so to make sure the range of numerical values in our data would affect our model we chose a scaler, a Robust Scaler. This would help numerical spread of the numbers which helps with outliers. If you know anything about outliers, then you know how the model will take them in and give results that are off. From there we ran the model and got a score of .70, remeber the goal is to get our R-squared score as close to 1 as possible. 
 
+*The following link will provide more information on Linear Regression:
+
+https://en.wikipedia.org/wiki/Linear_regression
+
+
 **Improving The Model**
 
 Even though our scaler was brought in to avoid any issues with the spread of the data the model was stil being affected. So a heat map was plotted to see which columns were interacting with one another. From the heat map we saw that although the columns were independent from the *price* they were dependent on one another, in other words correlated.
 
 To take care of this we cleaned up the outliers for the most correlated columns. We then binned and endcoded the columns we assumed were important (this assumption was based off of the heat map analysis). This methods we tried were known as feature engineering; target encoder and one-hot encoder.
 
+*The following link provieds more information on Feature Engineering:
+
+https://towardsdatascience.com/feature-engineering-for-machine-learning-3a5e293a5114
+
 **Transforming The Data**
+The focus for transforming the data was to get a normal distributing of the data, this way the regression model can peform better. The data transfomer we chose was Quantile Transform, which helps us reach the goal of normal distribution by reducing the effects of our outliers in the data by focusing on quantiles. Why did we use this, simply put it will take care the columns tha are interacting with one another. This effort was short lived because once we ran our baseline model on the transformed data, we got an R-squared score of .60. So it was time to try a new model. 
+
+*The following link provides the documentation for Quantile Transform:*
+
+https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.QuantileTransformer.html
 
 
-Outliers was cleaned from most correlated column.
-Second important column was encoded.
-Binning and encoding done by target encoder and one-hot encoder as feature engineering concepts.
-Transformations was done.
-Lasso and Ridge regressions were done.
-GAMs model was used with different distrubitions and tensors.
-From the all of these steps, we find our best model is GAMs model with lattitude and longtitude columns tensors with 0.9044 R^squared value.
+**The Search of a New Model** 
+Maybe we made things more complicated then it need to be by adding the features that we did, so we gave two models a try, Ridge and Lasso regression. Both Lasso and Ridge are simple regressions used as simplified models which assist in the prevetion of over-fitting your data aka doing way too much engineering. 
 
-# Findings 
+*Lasso*
 
-# Recommendations
+When working with this model we adjusted the alpha as followed: 0.001, 0.1, 1000. All three alphas gave us an R-squared score of .70. We were back at the beginning. This model uses your data to drop the unimportant columns and then runs its prediction. 
 
-# Future Improvements
+*You can find more information on Lasso using the following link:* 
 
-Check list
+https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Lasso.html?highlight=lasso#sklearn.linear_model.Lasso
 
-README explains findings succinctly
+*Ridge*
 
-README explains the final model and how it compares to an initial baseline
+With this model we adjusted the alpha as followed: 0.001, 0.1, 1000. The first two alphas gave us an R-squared score of .70, and the last one gaves us a score of .68. Our progress was in limbo! With this model at every alpha level we tried, the coefficient of the data was changed in order to improve the model, but this caused us to do worse becasue we lost too much data. In simple terms the multicolinarity of our columns cause use to lose more data we indented to get rid of.
 
-README outlines some recommendations and lists out future improvements and potential weaknesses in data/models
+*You can find more information on Ridge using the following link:*
+
+https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Ridge.html?highlight=ridge#sklearn.linear_model.Ridge
+
+Comparing the models to basaline: Below is a table that reflects the results of each model we ran up until this point.
+
+![]()
+
+**Final Model**
+
+*GAM*
+
+GAM is also known as Generalized Additive Model, this model is used in statistics for its ability to intepret and regulate your data. In simple terms it is flexible enough to handle the multicolinarity our data has. To improve the performance of GAM we used tensored both the latitude and longitude columns, added gamma distribution in combination with log link. The R-squared score increased drastically from .70 to .90. Below is the final results of the GAM Model.   
+
+![]()
+
+*The following link will provide more information on GAM:* 
+
+https://pygam.readthedocs.io/en/latest/
+
+
+
+# Findings
+
+The R-squared score we recieved using the GAM Model vs our Baseline Model: Linear Regression Model was better due to the fact that GAM was able to handle our independent variables correlating with one another.   
+
+Our goal was to find a model that would be able to predict the price of a home based off of the area the home was located in. We took modeling a step further to accomplish this by selecting zip codes for our GAM Model to test. 
+
+The chart below shows the results of our test per zip code:
+
+![]()
+
+As you can see the model did an amazing job predicting the price of a home! Based on the areas listed in the chart above, if you were relocating and needed to buy a home but wanted more bang for your buck you could use this model to find a price that fits in your budget. 
+
+If you are already in that area and looking to buy a fixer upper you could use this model to find a home that is cheap enough to be fixed up and profit from. 
+
+The possibilities are endless!!!
+
+
+# Recommendations and Future Improvements
+
+
+# Reprository Guide
+
+# Additional Resources
+
+# Team Members
+
+
+
+
+
 
 
