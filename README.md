@@ -20,7 +20,7 @@ Here at DS Borg Homes our team has spent the last year developing a model that w
 
 *The following link is the csv file of the original dataset we used:*
 
-**(insert csv file link here)**
+https://github.com/ezgigm/Project_2/blob/master/Data/kc_house_data.csv
 
 **The Plan:**
   The way we plan on tackling this is by doing the following:
@@ -43,7 +43,7 @@ We also found that the missing values were represented with a ? or a NaN, this w
 
 *The following csv file is where the cleaned data of the needed columns are found:*
 
-**(insert csv file link here)**
+https://github.com/ezgigm/Project_2/blob/master/Data/clean_data.csv
 
 *The following notebook shows the cleaning & exploring of the data as well as our findings from doing so:*
 
