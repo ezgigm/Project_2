@@ -177,7 +177,7 @@ Cleaned csv file of data set
 
 # Additional Resources
 
-Access to original dataset
+Information on original dataset
 
 https://info.kingcounty.gov/assessor/DataDownload/default.aspx
 
