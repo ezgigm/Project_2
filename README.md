@@ -1,7 +1,7 @@
 # The Sale Price Of Houses
 
 **The Goal:**
- The goal of this project is to predict the the sale price of homes based off of the zipcode the home is located in.
+ The goal of this project is to predict the the sale price of homes based off of the zip code the home is located in.
  
  **The Problem:**
  
@@ -13,13 +13,13 @@ Once those questions are answered you will see that the more research you do the
 
 **The Solution:** 
 
- Here at DS Borg Homes our team has spent the last year developing a model that will be able to tell how much a home is actually  worth by just simply typing in the zipcode! Voilà!! No more long nights of scouring through papers, websites, or phone numbers trying to find the answers you need. With our model, DS Borg Homes will help you find the perfect price for the perfect home.   
+ Here at DS Borg Homes our team has spent the last year developing a model that will be able to tell how much a home is actually  worth by just simply typing in the zip code! Voilà!! No more long nights of scouring through papers, websites, or phone numbers trying to find the answers you need. With our model, DS Borg Homes will help you find the perfect price for the perfect home.   
  
  
 **The Data:**
- The data used to acheive our goal is from the King County House Sales dataset.
+ The data used to achieve our goal is from the King County House Sales dataset.
  
- The following link is the csv file of the orginal dataset we used:
+ The following link is the csv file of the original dataset we used:
  
  
  **(insert csv file link here)** 
@@ -40,9 +40,9 @@ Once those questions are answered you will see that the more research you do the
  2. What information are we missing?
  3. What information do we need to get rid of?
  
-From viewing the data we found that we had 22 columns which consisted of information on a list of homes that played a role in its price for the years 2014 and 2015; size of the home, the year it was built, the year it was renovated, number of batherooms and bedrooms, etc. 
+From viewing the data we found that we had 22 columns which consisted of information on a list of homes that played a role in its price for the years 2014 and 2015; size of the home, the year it was built, the year it was renovated, number of bathrooms and bedrooms, etc. 
 
-We also found  that the missing values were represented with a *?* or a *NaN*, this was the issue we decieded to deal with first. After the missing values were taken care of we continued viewing the data for anything that would interfere with the modeling proccess. This included changing outliers and dropping coolumns. Afterwards the clean data was saved to a csv file, to work with.
+We also found  that the missing values were represented with a *?* or a *NaN*, this was the issue we decided to deal with first. After the missing values were taken care of we continued viewing the data for anything that would interfere with the modeling process. This included changing outliers and dropping columns. Afterwards the clean data was saved to a csv file, to work with.
 
  The following csv file is where the cleaned data of the needed columns are found: 
  
@@ -57,7 +57,7 @@ We also found  that the missing values were represented with a *?* or a *NaN*, t
  
 When working with predictive Linear Regression Models you must first choose how you will measure the accuracy of your work. For this instance we chose to use the R-squared. 
 
-This **R-squared** score is used in statistics as a measurment of how close you can get your data to fit on a regression line. In other words, the closer you can get your data to fit on that line the better your model is doing at predicting the sale price of a home. The highest score you can get is a 1, in percentages that is 100% of accuracy. We chose this scoring metric because we knew that several models would be tested and the R-squared score would be compatible with those test models. The next step was to run our first model, our **Baseline Model**. 
+This **R-squared** score is used in statistics as a measurement of how close you can get your data to fit on a regression line. In other words, the closer you can get your data to fit on that line the better your model is doing at predicting the sale price of a home. The highest score you can get is a 1, in percentages that is 100% of accuracy. We chose this scoring metric because we knew that several models would be tested and the R-squared score would be compatible with those test models. The next step was to run our first model, our **Baseline Model**. 
 
 You can find more information on the R-squared score using the link below:
 
