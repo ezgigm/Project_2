@@ -33,8 +33,7 @@ Once those questions are answered you will see that the more research you do the
 **The Solution:** 
 
  Here at DS Borg Homes our team has spent the last year developing a model that will be able to tell how much a home is actually  worth by just simply typing in the zipcode! Voilà!! No more long nights of scouring through papers, websites, or phone numbers trying to find the answers you need. With our model, DS Borg Homes will help you find the perfect price for the perfect home.   
-
-## The Procces of Developing the Model  
+ 
  
 **The Data:**
  The data used to acheive our goal is from the King County House Sales dataset. 
@@ -46,7 +45,7 @@ Once those questions are answered you will see that the more research you do the
 2. Exploring the data
 3. Modeling the data
 
-## Cleaning & Exploring The Data:
+# Cleaning & Exploring The Data:
 
  The first thing we did was look at the data while keeping in mind the following questions:
  
