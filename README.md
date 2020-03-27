@@ -123,6 +123,9 @@ GAM is also known as Generalized Additive Model, this model is used in statistic
 
 https://pygam.readthedocs.io/en/latest/
 
+All modeling steps can be found in notebook below;
+
+https://github.com/ezgigm/Project_2/blob/master/Jupyter%20Notebooks/STEP_2_Modeling.ipynb
 
 
 # Findings
@@ -151,10 +154,11 @@ We as well would like to build a model for every zip code in addition to subsets
 When it comes to the data in the future, we will collect more recent data past the year 2015 that includes data after the COVID-19 spread and recovery phase is over. 
 
 
-# Reprository Guide
+# Repository Guide
 
-*CSV Files*
- Original csv file of dataset
+CSV Files
+
+Original csv file of dataset
 https://github.com/ezgigm/Project_2/blob/master/Data/kc_house_data.csv
 
 
@@ -162,17 +166,18 @@ Cleaned csv file of data set
 https://github.com/ezgigm/Project_2/blob/master/Data/clean_data.csv
 
 
-*Notebooks*
- Cleaning & exploring the data and creating csv file 
- https://github.com/ezgigm/Project_2/blob/master/Jupyter%20Notebooks/STEP_1_Cleaning%20and%20Exploring%20Data.ipynb
+Notebooks
+
+Cleaning & exploring the data and creating csv file 
+https://github.com/ezgigm/Project_2/blob/master/Jupyter%20Notebooks/STEP_1_Cleaning%20and%20Exploring%20Data.ipynb
  
  
- Modeling the data
- https://github.com/ezgigm/Project_2/blob/master/Jupyter%20Notebooks/STEP_2_Modeling.ipynb
+Modeling the data
+https://github.com/ezgigm/Project_2/blob/master/Jupyter%20Notebooks/STEP_2_Modeling.ipynb
  
  
- *Presentation*
- https://github.com/ezgigm/Project_2/blob/master/DS%20Borge%20Homes.pdf
+Presentation
+https://github.com/ezgigm/Project_2/blob/master/DS%20Borge%20Homes.pdf
 
 
 # Additional Resources
