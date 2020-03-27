@@ -61,6 +61,29 @@ https://blog.minitab.com/blog/adventures-in-statistics-2/regression-analysis-how
 
 # Baseline Model vs Final Model
 
+**Baseline**
+
+The baseline model we chose to start with was a Linear Regression Model, this is used in statistics to compare the dependat variable to the independant variables. This model was just to see how the cleaned data would peform before making any changes. Our *price* column was the dependent veriable that was affected by and change in the other columns which were the dependent variables (assuming there are no columns correlated with one another aka interacting).
+
+You to make sure there is a leveled playing field for your model, so to make sure the range of numerical values in our data would affect our model we chose a scaler, a Robust Scaler. This would help numerical spread of the numbers which helps with outliers. If you know anything about outliers, then you know how the model will take them in and give results that are off. From there we ran the model and got a score of .70, remeber the goal is to get our R-squared score as close to 1 as possible. 
+
+**Improving The Model**
+
+Even though our scaler was brought in to avoid any issues with the spread of the data the model was stil being affected. So a heat map was plotted to see which columns were interacting with one another. From the heat map we saw that although the columns were independent from the *price* they were dependent on one another, in other words correlated.
+
+To take care of this we cleaned up the outliers for the most correlated columns. We then binned and endcoded the columns we assumed were important (this assumption was based off of the heat map analysis). This methods we tried were known as feature engineering; target encoder and one-hot encoder.
+
+**Transforming The Data**
+
+
+Outliers was cleaned from most correlated column.
+Second important column was encoded.
+Binning and encoding done by target encoder and one-hot encoder as feature engineering concepts.
+Transformations was done.
+Lasso and Ridge regressions were done.
+GAMs model was used with different distrubitions and tensors.
+From the all of these steps, we find our best model is GAMs model with lattitude and longtitude columns tensors with 0.9044 R^squared value.
+
 # Findings 
 
 # Recommendations
