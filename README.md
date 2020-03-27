@@ -18,7 +18,7 @@ Here at DS Borg Homes our team has spent the last year developing a model that w
 **The Data:** 
   The data used to achieve our goal is from the King County House Sales dataset.
 
-*The following link is the csv file of the original dataset we used:
+*The following link is the csv file of the original dataset we used:*
 
 **(insert csv file link here)**
 
@@ -41,11 +41,11 @@ From viewing the data we found that we had 22 columns which consisted of informa
 
 We also found that the missing values were represented with a ? or a NaN, this was the issue we decided to deal with first. After the missing values were taken care of we continued viewing the data for anything that would interfere with the modeling process. This included changing outliers and dropping columns. Afterwards the clean data was saved to a csv file, to work with.
 
-The following csv file is where the cleaned data of the needed columns are found:
+*The following csv file is where the cleaned data of the needed columns are found:*
 
 **(insert csv file link here)**
 
-*The following notebook shows the cleaning & exploring of the data as well as our findings from doing so:
+*The following notebook shows the cleaning & exploring of the data as well as our findings from doing so:*
 
 https://github.com/ezgigm/Project_2/blob/Ezgi/.ipynb_checkpoints/STEP_1_Cleaning%20and%20Exploring%20Data-checkpoint.ipynb
 
@@ -55,7 +55,7 @@ When working with predictive Linear Regression Models you must first choose how 
 
 This R-squared score is used in statistics as a measurement of how close you can get your data to fit on a regression line. In other words, the closer you can get your data to fit on that line the better your model is doing at predicting the sale price of a home. The highest score you can get is a 1, in percentages that is 100% of accuracy. We chose this scoring metric because we knew that several models would be tested and the R-squared score would be compatible with those test models. The next step was to run our first model, our Baseline Model.
 
-*You can find more information on the R-squared score using the link below:
+*You can find more information on the R-squared score using the link below:*
 
 https://blog.minitab.com/blog/adventures-in-statistics-2/regression-analysis-how-do-i-interpret-r-squared-and-assess-the-goodness-of-fit
 
@@ -67,7 +67,7 @@ The baseline model we chose to start with was a Linear Regression Model, this is
 
 You to make sure there is a leveled playing field for your model, so to make sure the range of numerical values in our data would affect our model we chose a scaler, a Robust Scaler. This would help numerical spread of the numbers which helps with outliers. If you know anything about outliers, then you know how the model will take them in and give results that are off. From there we ran the model and got a score of .70, remember the goal is to get our R-squared score as close to 1 as possible. 
 
-*The following link will provide more information on Linear Regression:
+*The following link will provide more information on Linear Regression:*
 
 https://en.wikipedia.org/wiki/Linear_regression
 
@@ -78,7 +78,7 @@ Even though our scaler was brought in to avoid any issues with the spread of the
 
 To take care of this we cleaned up the outliers for the most correlated columns. We then binned and encoded the columns we assumed were important (this assumption was based off of the heat map analysis). This methods we tried were known as feature engineering; target encoder and one-hot encoder.
 
-*The following link provides more information on Feature Engineering:
+*The following link provides more information on Feature Engineering:*
 
 https://towardsdatascience.com/feature-engineering-for-machine-learning-3a5e293a5114
 
