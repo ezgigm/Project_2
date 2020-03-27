@@ -1,4 +1,4 @@
-# Project_2The Sale Price Of Houses
+# The Sale Price Of Houses
 
 **The Goal:**
  The goal of this project is to predict the the sale price of homes based off of the zip code the home is located in.
@@ -59,9 +59,15 @@ You can find more information on the R-squared score using the link below:
 
 https://blog.minitab.com/blog/adventures-in-statistics-2/regression-analysis-how-do-i-interpret-r-squared-and-assess-the-goodness-of-fit
 
-# Baseline Model
+# Baseline Model vs Final Model
 
-look for correlations Choose linear regression for baseline improve base line by scaler look into more columns
+# Findings 
+
+# Recommendations
+
+# Future Improvements
+
+Check list
 
 README explains findings succinctly
 
@@ -69,4 +75,4 @@ README explains the final model and how it compares to an initial baseline
 
 README outlines some recommendations and lists out future improvements and potential weaknesses in data/models
 
-Both the original data and the version used for analysis are available in the repository
+
