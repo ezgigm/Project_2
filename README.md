@@ -1,22 +1,3 @@
-README helps navigate the repository
-
-README outlines the business problem and project goals
-
-README explains findings succinctly
-
-README discusses the metrics used, with some explanation of why those metrics were used to evaluate models
-
-README explains the final model and how it compares to an initial baseline
-
-README outlines some recommendations and lists out future improvements and potential weaknesses in data/models
-
-Both the original data and the version used for analysis are available in the repository
-
-
-
-
-
-
 # The Sale Price Of Houses
 
 **The Goal:**
@@ -36,7 +17,13 @@ Once those questions are answered you will see that the more research you do the
  
  
 **The Data:**
- The data used to acheive our goal is from the King County House Sales dataset. 
+ The data used to acheive our goal is from the King County House Sales dataset.
+ 
+ The following link is the csv file of the orginal dataset we used:
+ 
+ 
+ **(insert csv file link here)** 
+
 
 **The Plan:** 
  The way we plan on tackling this is by doing the following:
@@ -55,14 +42,41 @@ Once those questions are answered you will see that the more research you do the
  
 From viewing the data we found that we had 22 columns which consisted of information on a list of homes that played a role in its price for the years 2014 and 2015; size of the home, the year it was built, the year it was renovated, number of batherooms and bedrooms, etc. 
 
-The missing values were represented with a *?* or a *NaN*, this was the issue we decieded to deal with first. After the missing values were taken care of we continued viewing the data for anything that would interfere with the modeling proccess. This included changing outliers and dropping coolumns. Afterwards the clean data was saved to a csv file.
+We also found  that the missing values were represented with a *?* or a *NaN*, this was the issue we decieded to deal with first. After the missing values were taken care of we continued viewing the data for anything that would interfere with the modeling proccess. This included changing outliers and dropping coolumns. Afterwards the clean data was saved to a csv file, to work with.
 
- The following csv file is where the cleaned data of the needed columns are found **(insert csv file link here)** 
+ The following csv file is where the cleaned data of the needed columns are found: 
  
- The following notebook shows the cleaning & exploring of the data  **(insert notebook link here)**
+ **(insert csv file link here)** 
+ 
+ The following notebook shows the cleaning & exploring of the data as well as our findings from doing so:  
+ 
+ **https://github.com/ezgigm/Project_2/blob/Ezgi/.ipynb_checkpoints/STEP_1_Cleaning%20and%20Exploring%20Data-checkpoint.ipynb**
  
  
- # Modeling The Data 
-graphed a heatmap to view the correlation between each column vs the price column, with this we would be able to determine which columns were important and which columns were not. 
+ # Modeling The Data
  
- Now that we had clean data and the list of clumns we needed to model the data it was time to create a new dataset saving all of the work that was done. 
+When working with predictive Linear Regression Models you must first choose how you will measure the accuracy of your work. For this instance we chose to use the R-squared. 
+
+This **R-squared** score is used in statistics as a measurment of how close you can get your data to fit on a regression line. In other words, the closer you can get your data to fit on that line the better your model is doing at predicting the sale price of a home. The highest score you can get is a 1, in percentages that is 100% of accuracy. We chose this scoring metric because we knew that several models would be tested and the R-squared score would be compatible with those test models. The next step was to run our first model, our **Baseline Model**. 
+
+You can find more information on the R-squared score using the link below:
+
+**https://blog.minitab.com/blog/adventures-in-statistics-2/regression-analysis-how-do-i-interpret-r-squared-and-assess-the-goodness-of-fit**
+
+# Baseline Model
+look for correlations
+Choose linear regression for baseline 
+improve base line by scaler 
+look into more columns
+
+
+README explains findings succinctly
+
+
+README explains the final model and how it compares to an initial baseline
+
+README outlines some recommendations and lists out future improvements and potential weaknesses in data/models
+
+Both the original data and the version used for analysis are available in the repository
+
+
