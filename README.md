@@ -156,7 +156,7 @@ When it comes to the data in the future, we will collect more recent data past t
 
 # Repository Guide
 
-CSV Files
+*CSV Files*
 
 Original csv file of dataset
 https://github.com/ezgigm/Project_2/blob/master/Data/kc_house_data.csv
@@ -166,7 +166,7 @@ Cleaned csv file of data set
 https://github.com/ezgigm/Project_2/blob/master/Data/clean_data.csv
 
 
-Notebooks
+*Notebooks*
 
 Cleaning & exploring the data and creating csv file 
 https://github.com/ezgigm/Project_2/blob/master/Jupyter%20Notebooks/STEP_1_Cleaning%20and%20Exploring%20Data.ipynb
@@ -176,7 +176,8 @@ Modeling the data
 https://github.com/ezgigm/Project_2/blob/master/Jupyter%20Notebooks/STEP_2_Modeling.ipynb
  
  
-Presentation
+*Presentation*
+
 https://github.com/ezgigm/Project_2/blob/master/DS%20Borge%20Homes.pdf
 
 
