@@ -53,7 +53,7 @@ Once those questions are answered you will see that the more research you do the
  2. What information are we missing?
  3. What information do we need to get rid of?
  
-From viewing the data we found that we had 22 columns which consisted of information on a list of homes that played a role in its price for the year 2014 and 2015; size of the home, the year it was built, the year it was renovated, number of batherooms and bedrooms, etc. 
+From viewing the data we found that we had 22 columns which consisted of information on a list of homes that played a role in its price for the years 2014 and 2015; size of the home, the year it was built, the year it was renovated, number of batherooms and bedrooms, etc. 
 
 The missing values were represented with a *?* or a *NaN*, this was the issue we decieded to deal with first. After the missing values were taken care of we continued viewing the data for anything that would interfere with the modeling proccess. This included changing outliers and dropping coolumns. Afterwards the clean data was saved to a csv file.
 
