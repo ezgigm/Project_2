@@ -178,7 +178,7 @@ We as well would like to build a model for every zip code in addition to subsets
 When it comes to the data in the future, we will collect more recent data past the year 2015 that includes data after the COVID-19 spread and recovery phase is over. 
 
 
-# Reprository Guide
+# Repository Guide
 
 ## CSV Files
  
