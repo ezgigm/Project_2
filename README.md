@@ -1,15 +1,15 @@
 # The Sale Price Of Houses
 
 **The Goal:**
- The goal of this project is to predict the sale price of homes based off of the zip code the home is located in.
+ The goal of this project is to predict the sale price of homes based on the zip code the home is located in.
 
 **The Problem:**
 
-During our daily commute we tend to drive past homes that are either appealing to the eye or homes that just need a bit of work. After that moment of admiration or of making plans on how you would fix up a home, you drive on and forget about it.
+During our daily commute, we tend to drive past homes that are either appealing to the eye or homes that just need a bit of work. After that moment of admiration or of making plans on how you would fix up a home, you drive on and forget about it.
 
-But what if you didn't forget about it, what if you actually followed through with your idea and bought a brand new home, or even a fixer upper? Where would you even begin to bring such a thought to life? Most importantly, how much would it be to make it happen?
+But what if you didn't forget about it, what if you actually followed through with your idea and bought a brand new home, or even a fixer-upper? Where would you even begin to bring such a thought to life? Most importantly, how much would it be to make it happen?
 
-Once those questions are answered you will see that the more research you do the more the prices vary depending on the area you decide to purchase in. Not to mention the other factors that play a role in a homes price i.e. water front view and a basement. So now the price you had set for a budget begins to increase due to the lack of knowledge when looking into the value of the home you want to purchase.
+Once those questions are answered you will see that the more research you do the more the prices vary depending on the area you decide to purchase in. Not to mention the other factors that play a role in a homes price i.e. waterfront view and a basement. So now the price you had set for a budget begins to increase due to the lack of knowledge when looking into the value of the home you want to purchase.
 
 **The Solution:**
 
@@ -40,9 +40,9 @@ The first thing we did was look at the data while keeping in mind the following 
 2. What information are we missing?
 3. What information do we need to get rid of?
 
-From viewing the data we found that we had 22 columns which consisted of information on a list of homes that played a role in its price for the years 2014 and 2015; size of the home, the year it was built, the year it was renovated, number of bathrooms and bedrooms, etc.
+From viewing the data we found that we had 22 columns which consisted of information on a list of homes that played a role in its price for the years 2014 and 2015; the size of the home, the year it was built, the year it was renovated, the number of bathrooms and bedrooms, etc.
 
-We also found that the missing values were represented with a ? or a NaN, this was the issue we decided to deal with first. After the missing values were taken care of we continued viewing the data for anything that would interfere with the modeling process. This included changing outliers and dropping columns. Afterwards the clean data was saved to a csv file, to work with.
+We also found that the missing values were represented with a ? or a NaN, this was the issue we decided to deal with first. After the missing values were taken care of we continued viewing the data for anything that would interfere with the modeling process. This included changing outliers and dropping columns. Afterward, the clean data was saved to a csv file, to work with.
 
 
 *The following csv file is where the cleaned data of the needed columns are found:*
@@ -57,9 +57,9 @@ https://github.com/ezgigm/Project_2/blob/master/Jupyter%20Notebooks/STEP_1_Clean
 
 # Modeling The Data
 
-When working with predictive Linear Regression Models you must first choose how you will measure the accuracy of your work. For this instance we chose to use the R-squared.
+When working with predictive Linear Regression Models you must first choose how you will measure the accuracy of your work. For this instance, we chose to use the R-squared.
 
-This R-squared score is used in statistics as a measurement of how close you can get your data to fit on a regression line. In other words, the closer you can get your data to fit on that line the better your model is doing at predicting the sale price of a home. The highest score you can get is a 1, in percentages that is 100% of accuracy. We chose this scoring metric because we knew that several models would be tested and the R-squared score would be compatible with those test models. The next step was to run our first model, our Baseline Model.
+This R-squared score is used in statistics as a measurement of how close you can get your data to fit on a regression line. In other words, the closer you can get your data to fit on that line the better your model is doing at predicting the sale price of a home. The highest score you can get is a 1, in percentages that are 100% accuracy. We chose this scoring metric because we knew that several models would be tested and the R-squared score would be compatible with those test models. The next step was to run our first model, our Baseline Model.
 
 
 *You can find more information on the R-squared score using the link below:*
@@ -73,7 +73,7 @@ https://blog.minitab.com/blog/adventures-in-statistics-2/regression-analysis-how
 
 The baseline model we chose to start with was a Linear Regression Model, this is used in statistics to compare the dependent variable to the independent variables. This model was just to see how the cleaned data would perform before making any changes. Our *price* column was the dependent variable that was affected by and change in the other columns which were the dependent variables (assuming there are no columns correlated with one another aka interacting).
 
-You to make sure there is a leveled playing field for your model, so to make sure the range of numerical values in our data would affect our model we chose a scaler, a Robust Scaler. This would help numerical spread of the numbers which helps with outliers. If you know anything about outliers, then you know how the model will take them in and give results that are off. From there we ran the model and got a score of .70, remember the goal is to get our R-squared score as close to 1 as possible. 
+You to make sure there is a leveled playing field for your model, so to make sure the range of the numerical values in our data would affect our model we chose a scaler, a Robust Scaler. This would help numerical spread of the numbers which helps with outliers. If you know anything about outliers, then you know how the model will take them in and give results that are off. From there we ran the model and got a score of .70, remember the goal is to get our R-squared score as close to 1 as possible. 
 
 
 *The following link will provide more information on Linear Regression:*
@@ -83,9 +83,9 @@ https://en.wikipedia.org/wiki/Linear_regression
 
 **Improving The Model**
 
-Even though our scaler was brought in to avoid any issues with the spread of the data the model was still being affected. So a heat map was plotted to see which columns were interacting with one another. From the heat map we saw that although the columns were independent from the *price* they were dependent on one another, in other words correlated.
+Even though our scaler was brought in to avoid any issues with the spread of the data the model was still being affected. So a heat map was plotted to see which columns were interacting with one another. From the heat map, we saw that although the columns were independent of the *price* they were dependent on one another, in other words, correlated.
 
-To take care of this we cleaned up the outliers for the most correlated columns. We then binned and encoded the columns we assumed were important (this assumption was based off of the heat map analysis). This methods we tried were known as feature engineering; target encoder and one-hot encoder.
+To take care of this we cleaned up the outliers for the most correlated columns. We then binned and encoded the columns we assumed were important (this assumption was based on the heat map analysis). The methods we tried were known as feature engineering; target encoder and one-hot encoder.
 
 
 *The following link provides more information on Feature Engineering:*
@@ -94,7 +94,7 @@ https://towardsdatascience.com/feature-engineering-for-machine-learning-3a5e293a
 
 
 **Transforming The Data**
-The focus for transforming the data was to get a normal distributing of the data, this way the regression model can perform better. The data transformer we chose was Quantile Transform, which helps us reach the goal of normal distribution by reducing the effects of our outliers in the data by focusing on quantiles. Why did we use this, simply put it will take care the columns that are interacting with one another. This effort was short lived because once we ran our baseline model on the transformed data, we got an R-squared score of .60. So it was time to try a new model. 
+The focus for transforming the data was to get a normal distributing of the data, this way the regression model can perform better. The data transformer we chose was Quantile Transform, which helps us reach the goal of normal distribution by reducing the effects of our outliers in the data by focusing on quantiles. Why did we use this, simply put it will take care of the columns that are interacting with one another. This effort was short-lived because once we ran our baseline model on the transformed data, we got an R-squared score of .60. So it was time to try a new model. 
 
 
 *The following link provides the documentation for Quantile Transform:*
@@ -103,7 +103,7 @@ https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.Quantile
 
 
 **The Search of a New Model** 
-Maybe we made things more complicated then it need to be by adding the features that we did, so we gave two models a try, Ridge and Lasso regression. Both Lasso and Ridge are simple regressions used as simplified models which assist in the prevention of over-fitting your data aka doing way too much engineering. 
+Maybe we made things more complicated then it need to be by adding the features that we did, so we gave two models a try, Ridge, and Lasso regression. Both Lasso and Ridge are simple regressions used as simplified models that assist in the prevention of over-fitting your data aka doing way too much engineering. 
 
 
 *Lasso*
@@ -118,7 +118,7 @@ https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Lasso.htm
 
 *Ridge*
 
-With this model we adjusted the alpha as followed: 0.001, 0.1, 1000. The first two alphas gave us an R-squared score of .70, and the last one gave us a score of .68. Our progress was in limbo! With this model at every alpha level we tried, the coefficient of the data was changed in order to improve the model, but this caused us to do worse because we lost too much data. In simple terms the multicollinearity of our columns cause use to lose more data we indented to get rid of.
+With this model we adjusted the alpha as followed: 0.001, 0.1, 1000. The first two alphas gave us an R-squared score of .70, and the last one gave us a score of .68. Our progress was in limbo! With this model at every alpha level we tried, the coefficient of the data was changed in order to improve the model, but this caused us to do worse because we lost too much data. In simple terms, the multicollinearity of our columns causes use to lose more data we indented to get rid of.
 
 
 *You can find more information on Ridge using the following link:*
@@ -137,7 +137,7 @@ Comparing the models to baseline: Below is a table that reflects the results of 
 
 *GAM*
 
-GAM is also known as Generalized Additive Model, this model is used in statistics for its ability to interpret and regulate your data. In simple terms it is flexible enough to handle the multicollinearity our data has. To improve the performance of GAM we used tensored both the latitude and longitude columns, added gamma distribution in combination with log link. The R-squared score increased drastically from .70 to .90.
+GAM is also known as Generalized Additive Model, this model is used in statistics for its ability to interpret and regulate your data. In simple terms, it is flexible enough to handle the multicollinearity our data has. To improve the performance of GAM we used tensored both the latitude and longitude columns, added gamma distribution in combination with log link. The R-squared score increased drastically from .70 to .90.
 
 
 *The following link will provide more information on GAM:* 
